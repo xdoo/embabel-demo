@@ -21,7 +21,7 @@ abstract class Personas {
 @Agent(description = "Ein einfacher Agent, der eine Begruessung erzeugt")
 public class HelloAgent {
 
-  @AchievesGoal(description = "Person wurde persönlich begrüßt")
+  @AchievesGoal(description = "Die Person wurde persoenlich begruesst")
   @Action(description = "Erstellt eine kurze Begruessung basierend auf den Personendaten")
   Greeting hello(Person person, OperationContext context) {
     return context.ai()
