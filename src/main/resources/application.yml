@@ -3,6 +3,9 @@ spring.application.name: "agents"
 embabel:
   models:
     default-llm: "qwen3:0.6b"
+    llms:
+      fast: "smollm2:360m"
+      smart: "qwen3:0.6b"
 
 spring:
   ai:

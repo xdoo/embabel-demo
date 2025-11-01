@@ -18,14 +18,14 @@ abstract class Personas {
   );
 }
 
-@Agent(description = "Ein einfacher Agent, der eine Begruessung erzeugt")
+@Agent(description = "A simple agent that generates a greeting")
 public class HelloAgent {
 
-  @AchievesGoal(description = "Die Person wurde persoenlich begruesst")
-  @Action(description = "Erstellt eine kurze Begruessung basierend auf den Personendaten")
+  @AchievesGoal(description = "The person has been greeted personally")
+  @Action(description = "Creates a short greeting based on the person's data")
   Greeting hello(Person person, OperationContext context) {
     return context.ai()
-      .withLlm(LlmOptions.withAutoLlm().withTemperature(.5))
+      .withLlm(LlmOptions.withModel("smollm2:360m").withTemperature(.0))
       .withPromptContributor(Personas.GREETER)
       .createObject(String.format("Greet the user by first name in his or her preferred language. " +
         "" +
