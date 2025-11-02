@@ -4,8 +4,8 @@ embabel:
   models:
     default-llm: "qwen3:0.6b"
     llms:
-      fast: "smollm2:360m"
-      smart: "qwen3:0.6b"
+      check: "llama3.2:1b-instruct-q4_K_M"
+      first: "qwen3:0.6b"
 
 spring:
   ai:
@@ -14,6 +14,12 @@ spring:
       chat:
         options:
           model: "qwen3:0.6b"
+          format: json           # zwingt Ausgabeformat JSON. :contentReference[oaicite:2]{index=2}
+          seed: 42               # fixe Zufallszahl für Reproduzierbarkeit. :contentReference[oaicite:3]{index=3}
+          temperature: 0.0       # reduziert Kreativität => mehr deterministisch. :contentReference[oaicite:4]{index=4}
+          top-k: 1               # minimal vielfältige Auswahl => erhöhte Deterministik. :contentReference[oaicite:5]{index=5}
+          top-p: 0.0             # alternativ zu top-k: nur die wahrscheinlichsten Token zulassen. :contentReference[oaicite:6]{index=6}
+          repeat-last-n: 0
     mcp:
       client:
         enabled: false
