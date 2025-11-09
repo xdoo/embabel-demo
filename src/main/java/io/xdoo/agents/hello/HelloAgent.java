@@ -24,6 +24,7 @@ public class HelloAgent {
   @AchievesGoal(description = "The person has been greeted personally")
   @Action(description = "Creates a short greeting based on the person's data")
   Greeting hello(Person person, OperationContext context) {
+    
     return context.ai()
       .withLlm(LlmOptions.withModel("smollm2:360m").withTemperature(.0))
       .withPromptContributor(Personas.GREETER)

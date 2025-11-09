@@ -4,8 +4,9 @@ embabel:
   models:
     default-llm: "qwen3:0.6b"
     llms:
-      fast: "smollm2:360m"
-      smart: "qwen3:0.6b"
+      embedding: "embeddinggemma:300m-qat-q4_0"
+      check: "llama3.2:1b-instruct-q4_K_M"
+      first: "qwen3:0.6b"
 
 spring:
   ai:
@@ -14,6 +15,7 @@ spring:
       chat:
         options:
           model: "qwen3:0.6b"
+          seed: 42               # fixe Zufallszahl für Reproduzierbarkeit. :contentReference[oaicite:3]{index=3}
     mcp:
       client:
         enabled: false

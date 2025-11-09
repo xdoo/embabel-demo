@@ -1,0 +1,8 @@
+### Generate Embedding with Ollama
+POST http://localhost:11434/api/embed
+Content-Type: application/json
+
+{
+  "model": "embeddinggemma:300m-qat-q4_0",
+  "input": "Das ist ein Test"
+}
